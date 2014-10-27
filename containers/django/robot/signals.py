@@ -6,5 +6,5 @@ from robot.models import Robot
 @receiver(pre_save, sender=Robot, dispatch_uid='robot_pre_save')
 def robot_pre_save(sender, instance, **kwargs):
     instance.data = utils.load(instance.source, instance.content_type)
-    instance.name = instance.name or instance.data.get('name', '')
-    instance.description = instance.description or instance.data.get('description', '')
+    instance.name = instance.data.get('name', '')
+    instance.description = instance.data.get('description', '')
