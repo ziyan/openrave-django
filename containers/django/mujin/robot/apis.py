@@ -1,13 +1,13 @@
 from django.conf.urls import patterns, url
 from django.views.decorators.csrf import csrf_exempt
 from django.http import Http404, JsonResponse, HttpResponseNotAllowed
+from user.decorators import authenticated_view
 from robot.decorators import robot_view
 from robot.models import Robot
 from functools import wraps
 
 def api_view(methods=['GET']):
     def actual(func):
-        @csrf_exempt
         @wraps(func)
         def wrapper(request, *args, **kwargs):
             if request.method not in methods:
@@ -16,7 +16,8 @@ def api_view(methods=['GET']):
         return wrapper
     return actual
 
-
+@csrf_exempt
+@authenticated_view
 @api_view(['GET', 'POST'])
 def robots(request):
     if request.method == 'GET':
@@ -31,6 +32,8 @@ def robots(request):
         robot.save()
         return robot.to_dict()
 
+@csrf_exempt
+@authenticated_view
 @robot_view
 @api_view(['GET', 'DELETE', 'PUT'])
 def robot(request, robot, **kwargs):
