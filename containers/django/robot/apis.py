@@ -17,7 +17,7 @@ def api_view(methods=['GET']):
                 return HttpResponse()
             if isinstance(data, HttpResponse):
                 return data
-            return JsonResponse(func(request, *args, **kwargs))
+            return JsonResponse(data)
         return wrapper
     return actual
 
