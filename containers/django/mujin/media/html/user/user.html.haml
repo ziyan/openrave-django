@@ -1,0 +1,4 @@
+.container<>
+  %p<> {% verbatim %}{{last_name}}-{{first_name}}-{{id}}-{{robots.length}}{% endverbatim %}
+  %p<> {% verbatim %}{{#each robots}}{{#link-to 'robot' this}}{{name}}{{/link-to}}{{/each}}{% endverbatim %}
+  %p<> {% verbatim %}{{#link-to 'index'}}{% endverbatim %}Home{% verbatim %}{{/link-to}}{% endverbatim %}
