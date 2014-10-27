@@ -18,9 +18,9 @@ RUN \
 
 RUN \
     cd /tmp && \
-    git clone --depth=1 --branch=latest_stable https://github.com/rdiankov/openrave.git && \
+    git clone --depth=1 --branch=production https://github.com/rdiankov/openrave.git && \
     cd openrave && \
-    git checkout -qf latest_stable && \
+    git checkout -qf production && \
     make && \
     make install && \
     rm -rf /tmp/openrave

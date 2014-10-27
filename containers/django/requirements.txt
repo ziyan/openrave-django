@@ -1,4 +1,5 @@
 
 django
+gunicorn
 -e git+git://github.com/datadesk/django-yamlfield.git#egg=django-yamlfield
 

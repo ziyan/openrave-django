@@ -1,0 +1,19 @@
+# django: this container runs gunicorn for django
+django:
+  build: ./django/
+  volumes:
+  - "data:/data"
+  - "log:/var/log"
+  environment:
+    DJANGO_SETTINGS_MODULE: mujin.production
+
+# nginx: this container runs the nginx server
+nginx:
+  build: nginx
+  volumes:
+  - "data:/data"
+  - "log:/var/log"
+  ports:
+  - "80:80"
+  links:
+  - django
