@@ -55,5 +55,8 @@ Misc
 You can create API key to use with the API endpoints. This way, you don't have to leak your username and password in the basic auth. You can use the Django admin interface to add API keys. http://localhost/admin/user/key/
 
 Once a key is added, you can use it as your username in the basic auth. For example:
-```curl -u mllsh7GZyloNdsEcpHSFdIeHf87SbSYNT4w02cV3NjQxEr6HZvTNNga5OZ7OjQ4k: http://localhost/api/robots```
+
+```
+curl -u mllsh7GZyloNdsEcpHSFdIeHf87SbSYNT4w02cV3NjQxEr6HZvTNNga5OZ7OjQ4k: http://localhost/api/robots
+```
 
