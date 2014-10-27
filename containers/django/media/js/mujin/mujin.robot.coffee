@@ -6,6 +6,7 @@ mujin.namespace 'mujin.robot', (exports) ->
     description: DS.attr 'string'
     user: DS.belongsTo('user', async: true)
     dof: DS.attr 'number'
+    sensors: DS.attr()
 
   mujin.app.RobotRoute = Ember.Route.extend
     model: (params) ->

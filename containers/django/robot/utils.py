@@ -26,7 +26,12 @@ def load(source, content_type='application/zip'):
         robot = env.GetRobots()[0]
         data = {
             'name': robot.GetName(),
+            'description': robot.GetDescription(),
             'dof': robot.GetDOF(),
+            'sensors': [
+                sensor.GetName()
+                for sensor in robot.GetSensors()
+            ],
         }
 
     return data

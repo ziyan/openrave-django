@@ -85023,7 +85023,8 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap\'s JavaScript re
       user: DS.belongsTo('user', {
         async: true
       }),
-      dof: DS.attr('number')
+      dof: DS.attr('number'),
+      sensors: DS.attr()
     });
     return mujin.app.RobotRoute = Ember.Route.extend({
       model: function(params) {

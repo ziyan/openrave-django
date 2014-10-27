@@ -10,7 +10,7 @@ def users(request):
     return JsonResponse({
         'users': [
             {
-                'id': user.username,
+                'id': user.id,
                 'username': user.username,
                 'first_name': user.first_name,
                 'last_name': user.last_name,
@@ -27,7 +27,7 @@ def user(request, user, **kwargs):
 
     return JsonResponse({
         'user': {
-            'id': user.username,
+            'id': user.id,
             'username': user.username,
             'first_name': user.first_name,
             'last_name': user.last_name,

@@ -7,4 +7,7 @@
       %li<>
         %strong<> {% trans "DOF" %}:
         %span.sp-left<> {% verbatim %}{{dof}}{% endverbatim %}
+      %li<>
+        %strong<> {% trans "Sensors" %}:
+        %span.sp-left<> {% verbatim %}{{sensors}}{% endverbatim %}
     %div<> {% verbatim %}{{#if user}}{{#link-to 'user' user}}Owner{{/link-to}}{{/if}}{% endverbatim %}
