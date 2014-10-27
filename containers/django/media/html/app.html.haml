@@ -18,6 +18,9 @@
           %span<> {% trans "Mujin" %}
           {% verbatim %}{{/link-to}}{% endverbatim %}
         .navbar-collapse.collapse<>
+          %ul.nav.navbar-nav.navbar-right<>
+            %li<>
+              %a{href: "#"} Signed in as {{ request.user.username }}
     .content<> {% verbatim %}{{outlet}}{% endverbatim %}
 
 %script#index{type: "text/x-handlebars"}<>
