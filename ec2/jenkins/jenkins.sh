@@ -3,4 +3,4 @@ echo "deb http://pkg.jenkins-ci.org/debian binary/" > /etc/apt/sources.list.d/je
 apt-get update
 apt-get install -y jenkins
 
-sudo usermod -aG docker jenkins
+usermod -aG docker jenkins
