@@ -34,6 +34,8 @@ API
 #### Upload a new robot ```POST /api/robots```
 ```curl -u username:password -X POST -H 'Content-Type: application/zip' --data-binary @/path/to/robot.zae http://localhost/api/robots```
 
+**NOTE:** For files ending in ```.xml```, you need to provide ```application/xml``` as the content type. For files ending in ```.zae```, you need ```application/zip```. These are the only two types of files supported.
+
 #### Update an existing robot ```PUT /api/robots/:id```
 ```curl -u username:password -X PUT -H 'Content-Type: application/zip' --data-binary @/path/to/robot.zae http://localhost/api/robots/1```
 
