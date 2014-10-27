@@ -1,4 +1,11 @@
+{% load i18n %}
+
 .container<>
-  {% verbatim %}{{#each}}{{#link-to 'robot' id}}{{name}}{{/link-to}}{{/each}}{% endverbatim %}
-  %p<> {% verbatim %}{{#link-to 'index'}}{% endverbatim %}Hello world!{% verbatim %}{{/link-to}}{% endverbatim %}
-  %p<> {% verbatim %}{{#link-to 'about'}}{% endverbatim %}About{% verbatim %}{{/link-to}}{% endverbatim %}
+  %p<>
+    %h3<> {% trans 'Robots' %}
+    %ul<>
+      {% verbatim %}{{#each}}{% endverbatim %}
+      %li<>
+        {% verbatim %}{{#link-to 'robot' id}}{{name}}{{/link-to}}{% endverbatim %}
+      {% verbatim %}{{/each}}{% endverbatim %}
+

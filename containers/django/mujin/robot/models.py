@@ -51,16 +51,17 @@ class Robot(models.Model):
         return self.name
 
     def to_dict(self, is_all=False):
-        data = {
+        data = {}
+        data.update(self.data)
+        data.update({
             'id': self.id,
             'name': self.name,
             'description': self.description,
             'user': self.user_id,
-            'data': self.data,
             'content_type': self.content_type,
             'created': self.created,
             'modified': self.modified,
-        }
+        })
         if is_all:
             data['source'] = base64.b64encode(self.source)
         return data

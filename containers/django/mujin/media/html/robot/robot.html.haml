@@ -1,3 +1,10 @@
+{% load i18n %}
 .container<>
-  %p<> {{name}}
-  %p<> {% verbatim %}{{#link-to 'index'}}{% endverbatim %}Home{% verbatim %}{{/link-to}}{% endverbatim %}
+  %p<>
+    %h3<> {% verbatim %}{{name}}{% endverbatim %}
+    %p {% verbatim %}{{description}}{% endverbatim %}
+    %ul<>
+      %li<>
+        %strong<> {% trans "DOF" %}:
+        %span.sp-left<> {% verbatim %}{{dof}}{% endverbatim %}
+    %div<> {% verbatim %}{{#if user}}{{#link-to 'user' user}}Owner{{/link-to}}{{/if}}{% endverbatim %}
